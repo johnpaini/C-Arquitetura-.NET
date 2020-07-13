@@ -1,0 +1,35 @@
+C:\Users\aluno\documents\visual studio 2010\Projects\Curso2013Turma03\Treinamento2013Curso03.Repository\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\aluno\documents\visual studio 2010\Projects\Curso2013Turma03\Treinamento2013Curso03.Repository\bin\Debug\Treinamento2013Curso03.Repository.dll
+C:\Users\aluno\documents\visual studio 2010\Projects\Curso2013Turma03\Treinamento2013Curso03.Repository\bin\Debug\Treinamento2013Curso03.Repository.pdb
+C:\Users\aluno\documents\visual studio 2010\Projects\Curso2013Turma03\Treinamento2013Curso03.Repository\bin\Debug\SGI.Framework.dll
+C:\Users\aluno\documents\visual studio 2010\Projects\Curso2013Turma03\Treinamento2013Curso03.Repository\bin\Debug\Treinamento2013Curso03.ModelData.dll
+C:\Users\aluno\documents\visual studio 2010\Projects\Curso2013Turma03\Treinamento2013Curso03.Repository\bin\Debug\Interop.BrokerLib.dll
+C:\Users\aluno\documents\visual studio 2010\Projects\Curso2013Turma03\Treinamento2013Curso03.Repository\bin\Debug\NLog.dll
+C:\Users\aluno\documents\visual studio 2010\Projects\Curso2013Turma03\Treinamento2013Curso03.Repository\bin\Debug\Treinamento2013Curso03.ModelData.pdb
+C:\Users\aluno\documents\visual studio 2010\Projects\Curso2013Turma03\Treinamento2013Curso03.Repository\bin\Debug\NLog.xml
+C:\Users\aluno\documents\visual studio 2010\Projects\Curso2013Turma03\Treinamento2013Curso03.Repository\obj\Debug\Treinamento2013Curso03.Repository.dll
+C:\Users\aluno\documents\visual studio 2010\Projects\Curso2013Turma03\Treinamento2013Curso03.Repository\obj\Debug\Treinamento2013Curso03.Repository.pdb
+C:\Users\aluno\Documents\Visual Studio 2010\Curso2013Turma03\Treinamento2013Curso03.Repository\bin\Debug\Treinamento2013Curso03.Repository.dll
+C:\Users\aluno\Documents\Visual Studio 2010\Curso2013Turma03\Treinamento2013Curso03.Repository\bin\Debug\Treinamento2013Curso03.Repository.pdb
+C:\Users\aluno\Documents\Visual Studio 2010\Curso2013Turma03\Treinamento2013Curso03.Repository\bin\Debug\SGI.Framework.dll
+C:\Users\aluno\Documents\Visual Studio 2010\Curso2013Turma03\Treinamento2013Curso03.Repository\bin\Debug\Treinamento2013Curso03.ModelData.dll
+C:\Users\aluno\Documents\Visual Studio 2010\Curso2013Turma03\Treinamento2013Curso03.Repository\bin\Debug\Interop.BrokerLib.dll
+C:\Users\aluno\Documents\Visual Studio 2010\Curso2013Turma03\Treinamento2013Curso03.Repository\bin\Debug\NLog.dll
+C:\Users\aluno\Documents\Visual Studio 2010\Curso2013Turma03\Treinamento2013Curso03.Repository\bin\Debug\Treinamento2013Curso03.ModelData.pdb
+C:\Users\aluno\Documents\Visual Studio 2010\Curso2013Turma03\Treinamento2013Curso03.Repository\bin\Debug\NLog.xml
+C:\Users\aluno\Documents\Visual Studio 2010\Curso2013Turma03\Treinamento2013Curso03.Repository\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\aluno\Documents\Visual Studio 2010\Curso2013Turma03\Treinamento2013Curso03.Repository\obj\Debug\Treinamento2013Curso03.Repository.dll
+C:\Users\aluno\Documents\Visual Studio 2010\Curso2013Turma03\Treinamento2013Curso03.Repository\obj\Debug\Treinamento2013Curso03.Repository.pdb
+C:\Users\User\Downloads\Curso2013Turma03- John Paini 25-04\Curso2013Turma03\Treinamento2013Curso03.Repository\bin\Debug\Treinamento2013Curso03.Repository.dll
+C:\Users\User\Downloads\Curso2013Turma03- John Paini 25-04\Curso2013Turma03\Treinamento2013Curso03.Repository\bin\Debug\Treinamento2013Curso03.Repository.pdb
+C:\Users\User\Downloads\Curso2013Turma03- John Paini 25-04\Curso2013Turma03\Treinamento2013Curso03.Repository\bin\Debug\Treinamento2013Curso03.ModelData.dll
+C:\Users\User\Downloads\Curso2013Turma03- John Paini 25-04\Curso2013Turma03\Treinamento2013Curso03.Repository\bin\Debug\Interop.BrokerLib.dll
+C:\Users\User\Downloads\Curso2013Turma03- John Paini 25-04\Curso2013Turma03\Treinamento2013Curso03.Repository\bin\Debug\NLog.dll
+C:\Users\User\Downloads\Curso2013Turma03- John Paini 25-04\Curso2013Turma03\Treinamento2013Curso03.Repository\bin\Debug\Treinamento2013Curso03.ModelData.pdb
+C:\Users\User\Downloads\Curso2013Turma03- John Paini 25-04\Curso2013Turma03\Treinamento2013Curso03.Repository\bin\Debug\Treinamento2013Curso03.ModelData.dll.config
+C:\Users\User\Downloads\Curso2013Turma03- John Paini 25-04\Curso2013Turma03\Treinamento2013Curso03.Repository\bin\Debug\NLog.xml
+C:\Users\User\Downloads\Curso2013Turma03- John Paini 25-04\Curso2013Turma03\Treinamento2013Curso03.Repository\obj\Debug\Treinamento2013Curso03.Repository.csprojAssemblyReference.cache
+C:\Users\User\Downloads\Curso2013Turma03- John Paini 25-04\Curso2013Turma03\Treinamento2013Curso03.Repository\obj\Debug\Treinamento2013Curso03.Repository.csproj.CoreCompileInputs.cache
+C:\Users\User\Downloads\Curso2013Turma03- John Paini 25-04\Curso2013Turma03\Treinamento2013Curso03.Repository\obj\Debug\Treinamento2013Curso03.Repository.csproj.CopyComplete
+C:\Users\User\Downloads\Curso2013Turma03- John Paini 25-04\Curso2013Turma03\Treinamento2013Curso03.Repository\obj\Debug\Treinamento2013Curso03.Repository.dll
+C:\Users\User\Downloads\Curso2013Turma03- John Paini 25-04\Curso2013Turma03\Treinamento2013Curso03.Repository\obj\Debug\Treinamento2013Curso03.Repository.pdb

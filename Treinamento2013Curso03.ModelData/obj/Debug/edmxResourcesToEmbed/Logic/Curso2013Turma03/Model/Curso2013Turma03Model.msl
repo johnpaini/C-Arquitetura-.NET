@@ -1,0 +1,131 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2008/09/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="Curso2013Turma03ModelStoreContainer" CdmEntityContainer="Curso2013Turma03Entities">
+    <EntitySetMapping Name="Clientes">
+      <EntityTypeMapping TypeName="Curso2013Turma03Model.Cliente">
+        <MappingFragment StoreEntitySet="Clientes">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Nome" ColumnName="Nome" />
+          <ScalarProperty Name="Sobrenome" ColumnName="Sobrenome" />
+          <ScalarProperty Name="Cargo" ColumnName="Cargo" />
+          <ScalarProperty Name="Lotacao" ColumnName="Lotacao" />
+          <ScalarProperty Name="Telefone" ColumnName="Telefone" />
+          <ScalarProperty Name="DataInsert" ColumnName="DataInsert" />
+          <ScalarProperty Name="DataUpdate" ColumnName="DataUpdate" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Cargoes">
+      <EntityTypeMapping TypeName="Curso2013Turma03Model.Cargo">
+        <MappingFragment StoreEntitySet="Cargo">
+          <ScalarProperty Name="DataUpdate" ColumnName="DataUpdate" />
+          <ScalarProperty Name="DataInsert" ColumnName="DataInsert" />
+          <ScalarProperty Name="DescricaoCargo" ColumnName="DescricaoCargo" />
+          <ScalarProperty Name="IDCargo" ColumnName="IDCargo" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Funcionarios">
+      <EntityTypeMapping TypeName="Curso2013Turma03Model.Funcionario">
+        <MappingFragment StoreEntitySet="Funcionario">
+          <ScalarProperty Name="DataUpdate" ColumnName="DataUpdate" />
+          <ScalarProperty Name="DataInsert" ColumnName="DataInsert" />
+          <ScalarProperty Name="Telefone" ColumnName="Telefone" />
+          <ScalarProperty Name="IDMunicipio" ColumnName="IDMunicipio" />
+          <ScalarProperty Name="Endereco" ColumnName="Endereco" />
+          <ScalarProperty Name="IDLotacao" ColumnName="IDLotacao" />
+          <ScalarProperty Name="IDCargo" ColumnName="IDCargo" />
+          <ScalarProperty Name="Sobrenome" ColumnName="Sobrenome" />
+          <ScalarProperty Name="Nome" ColumnName="Nome" />
+          <ScalarProperty Name="IDFuncionario" ColumnName="IDFuncionario" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Lotacaos">
+      <EntityTypeMapping TypeName="Curso2013Turma03Model.Lotacao">
+        <MappingFragment StoreEntitySet="Lotacao">
+          <ScalarProperty Name="DataUpdate" ColumnName="DataUpdate" />
+          <ScalarProperty Name="DataInsert" ColumnName="DataInsert" />
+          <ScalarProperty Name="DescricaoLotacao" ColumnName="DescricaoLotacao" />
+          <ScalarProperty Name="IDLotacao" ColumnName="IDLotacao" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Municipios">
+      <EntityTypeMapping TypeName="Curso2013Turma03Model.Municipio">
+        <MappingFragment StoreEntitySet="Municipio">
+          <ScalarProperty Name="DataUpdate" ColumnName="DataUpdate" />
+          <ScalarProperty Name="DataInsert" ColumnName="DataInsert" />
+          <ScalarProperty Name="IDUF" ColumnName="IDUF" />
+          <ScalarProperty Name="DescricaoMunicipio" ColumnName="DescricaoMunicipio" />
+          <ScalarProperty Name="IDMunicipio" ColumnName="IDMunicipio" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="UFs">
+      <EntityTypeMapping TypeName="Curso2013Turma03Model.UF">
+        <MappingFragment StoreEntitySet="UF">
+          <ScalarProperty Name="DataUpdate" ColumnName="DataUpdate" />
+          <ScalarProperty Name="DataInsert" ColumnName="DataInsert" />
+          <ScalarProperty Name="Sigla" ColumnName="Sigla" />
+          <ScalarProperty Name="DescricaoUF" ColumnName="DescricaoUF" />
+          <ScalarProperty Name="IDUF" ColumnName="IDUF" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <FunctionImportMapping FunctionImportName="PR_ListarFuncionarios" FunctionName="Curso2013Turma03Model.Store.PR_ListarFuncionarios">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="Curso2013Turma03Model.PR_ListarFuncionarios_Result">
+          <ScalarProperty Name="IDFuncionario" ColumnName="IDFuncionario" />
+          <ScalarProperty Name="Nome" ColumnName="Nome" />
+          <ScalarProperty Name="Sobrenome" ColumnName="Sobrenome" />
+          <ScalarProperty Name="DescricaoCargo" ColumnName="DescricaoCargo" />
+          <ScalarProperty Name="DescricaoLotacao" ColumnName="DescricaoLotacao" />
+          <ScalarProperty Name="Endereco" ColumnName="Endereco" />
+          <ScalarProperty Name="DescricaoMunicipio" ColumnName="DescricaoMunicipio" />
+          <ScalarProperty Name="Sigla" ColumnName="Sigla" />
+          <ScalarProperty Name="Telefone" ColumnName="Telefone" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="PR_ListarFuncionariosPorCargo" FunctionName="Curso2013Turma03Model.Store.PR_ListarFuncionariosPorCargo">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="Curso2013Turma03Model.PR_ListarFuncionariosPorCargo_Result">
+          <ScalarProperty Name="IDFuncionario" ColumnName="IDFuncionario" />
+          <ScalarProperty Name="Nome" ColumnName="Nome" />
+          <ScalarProperty Name="Sobrenome" ColumnName="Sobrenome" />
+          <ScalarProperty Name="DescricaoCargo" ColumnName="DescricaoCargo" />
+          <ScalarProperty Name="DescricaoLotacao" ColumnName="DescricaoLotacao" />
+          <ScalarProperty Name="Endereco" ColumnName="Endereco" />
+          <ScalarProperty Name="DescricaoMunicipio" ColumnName="DescricaoMunicipio" />
+          <ScalarProperty Name="Sigla" ColumnName="Sigla" />
+          <ScalarProperty Name="Telefone" ColumnName="Telefone" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="PR_ListarFuncionariosPorLotacao" FunctionName="Curso2013Turma03Model.Store.PR_ListarFuncionariosPorLotacao">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="Curso2013Turma03Model.PR_ListarFuncionariosPorLotacao_Result">
+          <ScalarProperty Name="IDFuncionario" ColumnName="IDFuncionario" />
+          <ScalarProperty Name="Nome" ColumnName="Nome" />
+          <ScalarProperty Name="Sobrenome" ColumnName="Sobrenome" />
+          <ScalarProperty Name="DescricaoCargo" ColumnName="DescricaoCargo" />
+          <ScalarProperty Name="DescricaoLotacao" ColumnName="DescricaoLotacao" />
+          <ScalarProperty Name="Endereco" ColumnName="Endereco" />
+          <ScalarProperty Name="DescricaoMunicipio" ColumnName="DescricaoMunicipio" />
+          <ScalarProperty Name="Sigla" ColumnName="Sigla" />
+          <ScalarProperty Name="Telefone" ColumnName="Telefone" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="PR_ListarMunicipios" FunctionName="Curso2013Turma03Model.Store.PR_ListarMunicipios">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="Curso2013Turma03Model.PR_ListarMunicipios_Result">
+          <ScalarProperty Name="IDMunicipio" ColumnName="IDMunicipio" />
+          <ScalarProperty Name="DescricaoMunicipio" ColumnName="DescricaoMunicipio" />
+          <ScalarProperty Name="Sigla" ColumnName="Sigla" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+  </EntityContainerMapping>
+</Mapping>

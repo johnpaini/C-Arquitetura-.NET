@@ -1,0 +1,51 @@
+﻿@model IEnumerable<Treinamento2013Curso03.ModelData.Logic.Curso2013Turma03.Model.Municipio>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table>
+    <tr>
+        <th>
+            DescricaoMunicipio
+        </th>
+        <th>
+            IDUF
+        </th>
+        <th>
+            DataInsert
+        </th>
+        <th>
+            DataUpdate
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.DescricaoMunicipio)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.IDUF)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DataInsert)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DataUpdate)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.IDMunicipio }) |
+            @Html.ActionLink("Details", "Details", new { id=item.IDMunicipio }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.IDMunicipio })
+        </td>
+    </tr>
+}
+
+</table>

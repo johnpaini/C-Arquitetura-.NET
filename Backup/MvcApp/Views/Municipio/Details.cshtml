@@ -1,0 +1,35 @@
+﻿@model Treinamento2013Curso03.ModelData.Logic.Curso2013Turma03.Model.Municipio
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<fieldset>
+    <legend>Municipio</legend>
+
+    <div class="display-label">DescricaoMunicipio</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.DescricaoMunicipio)
+    </div>
+
+    <div class="display-label">IDUF</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.IDUF)
+    </div>
+
+    <div class="display-label">DataInsert</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.DataInsert)
+    </div>
+
+    <div class="display-label">DataUpdate</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.DataUpdate)
+    </div>
+</fieldset>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id=Model.IDMunicipio }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

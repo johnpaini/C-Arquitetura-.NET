@@ -1,0 +1,35 @@
+﻿@model Treinamento2013Curso03.ModelData.Logic.Curso2013Turma03.Model.UF
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<fieldset>
+    <legend>UF</legend>
+
+    <div class="display-label">DescricaoUF</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.DescricaoUF)
+    </div>
+
+    <div class="display-label">Sigla</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Sigla)
+    </div>
+
+    <div class="display-label">DataInsert</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.DataInsert)
+    </div>
+
+    <div class="display-label">DataUpdate</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.DataUpdate)
+    </div>
+</fieldset>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id=Model.IDUF }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

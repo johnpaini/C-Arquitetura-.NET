@@ -1,0 +1,51 @@
+﻿@model IEnumerable<Treinamento2013Curso03.ModelData.Logic.Curso2013Turma03.Model.UF>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table>
+    <tr>
+        <th>
+            DescricaoUF
+        </th>
+        <th>
+            Sigla
+        </th>
+        <th>
+            DataInsert
+        </th>
+        <th>
+            DataUpdate
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.DescricaoUF)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Sigla)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DataInsert)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DataUpdate)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.IDUF }) |
+            @Html.ActionLink("Details", "Details", new { id=item.IDUF }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.IDUF })
+        </td>
+    </tr>
+}
+
+</table>

@@ -1,0 +1,29 @@
+﻿@model Treinamento2013Curso03.ModelData.Logic.Curso2013Turma03.Model.Cargo
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<fieldset>
+    <legend>Cargo</legend>
+
+    <div class="display-label">DescricaoCargo</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.DescricaoCargo)
+    </div>
+
+    <div class="display-label">DataInsert</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.DataInsert)
+    </div>
+
+    <div class="display-label">DataUpdate</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.DataUpdate)
+    </div>
+</fieldset>
+<p>
+    @Html.ActionLink("Back to List", "Index")
+</p>

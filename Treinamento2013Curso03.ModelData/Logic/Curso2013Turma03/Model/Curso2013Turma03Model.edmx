@@ -1,0 +1,524 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="2.0" xmlns:edmx="http://schemas.microsoft.com/ado/2008/10/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="Curso2013Turma03Model.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/02/edm/ssdl">
+        <EntityContainer Name="Curso2013Turma03ModelStoreContainer">
+          <EntitySet Name="Cargo" EntityType="Curso2013Turma03Model.Store.Cargo" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Clientes" EntityType="Curso2013Turma03Model.Store.Clientes" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Funcionario" EntityType="Curso2013Turma03Model.Store.Funcionario" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Lotacao" EntityType="Curso2013Turma03Model.Store.Lotacao" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Municipio" EntityType="Curso2013Turma03Model.Store.Municipio" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="UF" EntityType="Curso2013Turma03Model.Store.UF" store:Type="Tables" Schema="dbo" />
+          <AssociationSet Name="FK_Funcionario_Cargo" Association="Curso2013Turma03Model.Store.FK_Funcionario_Cargo">
+            <End Role="Cargo" EntitySet="Cargo" />
+            <End Role="Funcionario" EntitySet="Funcionario" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Funcionario_Lotacao" Association="Curso2013Turma03Model.Store.FK_Funcionario_Lotacao">
+            <End Role="Lotacao" EntitySet="Lotacao" />
+            <End Role="Funcionario" EntitySet="Funcionario" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Funcionario_Municipio" Association="Curso2013Turma03Model.Store.FK_Funcionario_Municipio">
+            <End Role="Municipio" EntitySet="Municipio" />
+            <End Role="Funcionario" EntitySet="Funcionario" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Municipio_UF" Association="Curso2013Turma03Model.Store.FK_Municipio_UF">
+            <End Role="UF" EntitySet="UF" />
+            <End Role="Municipio" EntitySet="Municipio" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="Cargo">
+          <Key>
+            <PropertyRef Name="IDCargo" />
+          </Key>
+          <Property Name="IDCargo" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="DescricaoCargo" Type="varchar(max)" Nullable="false" />
+          <Property Name="DataInsert" Type="datetime" />
+          <Property Name="DataUpdate" Type="datetime" />
+        </EntityType>
+        <EntityType Name="Clientes">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" Nullable="false" />
+          <Property Name="Nome" Type="varchar(max)" Nullable="false" />
+          <Property Name="Sobrenome" Type="varchar(max)" Nullable="false" />
+          <Property Name="Cargo" Type="varchar(max)" Nullable="false" />
+          <Property Name="Lotacao" Type="varchar(max)" Nullable="false" />
+          <Property Name="Telefone" Type="char" Nullable="false" MaxLength="10" />
+          <Property Name="DataInsert" Type="datetime" />
+          <Property Name="DataUpdate" Type="datetime" />
+        </EntityType>
+        <EntityType Name="Funcionario">
+          <Key>
+            <PropertyRef Name="IDFuncionario" />
+          </Key>
+          <Property Name="IDFuncionario" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Nome" Type="varchar(max)" Nullable="false" />
+          <Property Name="Sobrenome" Type="varchar(max)" Nullable="false" />
+          <Property Name="IDCargo" Type="int" Nullable="false" />
+          <Property Name="IDLotacao" Type="int" Nullable="false" />
+          <Property Name="Endereco" Type="varchar(max)" Nullable="false" />
+          <Property Name="IDMunicipio" Type="int" Nullable="false" />
+          <Property Name="Telefone" Type="varchar" Nullable="false" MaxLength="10" />
+          <Property Name="DataInsert" Type="datetime" />
+          <Property Name="DataUpdate" Type="datetime" />
+        </EntityType>
+        <EntityType Name="Lotacao">
+          <Key>
+            <PropertyRef Name="IDLotacao" />
+          </Key>
+          <Property Name="IDLotacao" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="DescricaoLotacao" Type="varchar(max)" Nullable="false" />
+          <Property Name="DataInsert" Type="datetime" />
+          <Property Name="DataUpdate" Type="datetime" />
+        </EntityType>
+        <EntityType Name="Municipio">
+          <Key>
+            <PropertyRef Name="IDMunicipio" />
+          </Key>
+          <Property Name="IDMunicipio" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="DescricaoMunicipio" Type="varchar(max)" Nullable="false" />
+          <Property Name="IDUF" Type="int" Nullable="false" />
+          <Property Name="DataInsert" Type="datetime" />
+          <Property Name="DataUpdate" Type="datetime" />
+        </EntityType>
+        <EntityType Name="UF">
+          <Key>
+            <PropertyRef Name="IDUF" />
+          </Key>
+          <Property Name="IDUF" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="DescricaoUF" Type="varchar(max)" Nullable="false" />
+          <Property Name="Sigla" Type="char" Nullable="false" MaxLength="2" />
+          <Property Name="DataInsert" Type="datetime" />
+          <Property Name="DataUpdate" Type="datetime" />
+        </EntityType>
+        <Association Name="FK_Funcionario_Cargo">
+          <End Role="Cargo" Type="Curso2013Turma03Model.Store.Cargo" Multiplicity="1" />
+          <End Role="Funcionario" Type="Curso2013Turma03Model.Store.Funcionario" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Cargo">
+              <PropertyRef Name="IDCargo" />
+            </Principal>
+            <Dependent Role="Funcionario">
+              <PropertyRef Name="IDCargo" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Funcionario_Lotacao">
+          <End Role="Lotacao" Type="Curso2013Turma03Model.Store.Lotacao" Multiplicity="1" />
+          <End Role="Funcionario" Type="Curso2013Turma03Model.Store.Funcionario" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Lotacao">
+              <PropertyRef Name="IDLotacao" />
+            </Principal>
+            <Dependent Role="Funcionario">
+              <PropertyRef Name="IDLotacao" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Funcionario_Municipio">
+          <End Role="Municipio" Type="Curso2013Turma03Model.Store.Municipio" Multiplicity="1" />
+          <End Role="Funcionario" Type="Curso2013Turma03Model.Store.Funcionario" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Municipio">
+              <PropertyRef Name="IDMunicipio" />
+            </Principal>
+            <Dependent Role="Funcionario">
+              <PropertyRef Name="IDMunicipio" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Municipio_UF">
+          <End Role="UF" Type="Curso2013Turma03Model.Store.UF" Multiplicity="1" />
+          <End Role="Municipio" Type="Curso2013Turma03Model.Store.Municipio" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="UF">
+              <PropertyRef Name="IDUF" />
+            </Principal>
+            <Dependent Role="Municipio">
+              <PropertyRef Name="IDUF" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Function Name="PR_ListarFuncionarios" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <Function Name="PR_ListarFuncionariosPorCargo" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="IDCargo" Type="int" Mode="In" />
+        </Function>
+        <Function Name="PR_ListarFuncionariosPorLotacao" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="IDLotacao" Type="int" Mode="In" />
+        </Function>
+        <Function Name="PR_ListarMunicipios" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="Curso2013Turma03Model" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
+        <EntityContainer Name="Curso2013Turma03Entities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Clientes" EntityType="Curso2013Turma03Model.Cliente" />
+          <EntitySet Name="Cargoes" EntityType="Curso2013Turma03Model.Cargo" />
+          <EntitySet Name="Funcionarios" EntityType="Curso2013Turma03Model.Funcionario" />
+          <EntitySet Name="Lotacaos" EntityType="Curso2013Turma03Model.Lotacao" />
+          <EntitySet Name="Municipios" EntityType="Curso2013Turma03Model.Municipio" />
+          <EntitySet Name="UFs" EntityType="Curso2013Turma03Model.UF" />
+          <AssociationSet Name="FK_Funcionario_Cargo" Association="Curso2013Turma03Model.FK_Funcionario_Cargo">
+            <End Role="Cargo" EntitySet="Cargoes" />
+            <End Role="Funcionario" EntitySet="Funcionarios" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Funcionario_Lotacao" Association="Curso2013Turma03Model.FK_Funcionario_Lotacao">
+            <End Role="Lotacao" EntitySet="Lotacaos" />
+            <End Role="Funcionario" EntitySet="Funcionarios" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Funcionario_Municipio" Association="Curso2013Turma03Model.FK_Funcionario_Municipio">
+            <End Role="Municipio" EntitySet="Municipios" />
+            <End Role="Funcionario" EntitySet="Funcionarios" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Municipio_UF" Association="Curso2013Turma03Model.FK_Municipio_UF">
+            <End Role="UF" EntitySet="UFs" />
+            <End Role="Municipio" EntitySet="Municipios" />
+          </AssociationSet>
+          <FunctionImport Name="PR_ListarFuncionarios" ReturnType="Collection(Curso2013Turma03Model.PR_ListarFuncionarios_Result)" />
+          <FunctionImport Name="PR_ListarFuncionariosPorCargo" ReturnType="Collection(Curso2013Turma03Model.PR_ListarFuncionariosPorCargo_Result)">
+            <Parameter Name="IDCargo" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="PR_ListarFuncionariosPorLotacao" ReturnType="Collection(Curso2013Turma03Model.PR_ListarFuncionariosPorLotacao_Result)">
+            <Parameter Name="IDLotacao" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="PR_ListarMunicipios" ReturnType="Collection(Curso2013Turma03Model.PR_ListarMunicipios_Result)" />
+        </EntityContainer>
+        <EntityType Name="Cliente">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" />
+          <Property Name="Nome" Type="String" Nullable="false" MaxLength="Max" Unicode="false" FixedLength="false" />
+          <Property Name="Sobrenome" Type="String" Nullable="false" MaxLength="Max" Unicode="false" FixedLength="false" />
+          <Property Name="Cargo" Type="String" Nullable="false" MaxLength="Max" Unicode="false" FixedLength="false" />
+          <Property Name="Lotacao" Type="String" Nullable="false" MaxLength="Max" Unicode="false" FixedLength="false" />
+          <Property Name="Telefone" Type="String" Nullable="false" MaxLength="10" Unicode="false" FixedLength="true" />
+          <Property Name="DataInsert" Type="DateTime" />
+          <Property Name="DataUpdate" Type="DateTime" />
+        </EntityType>
+        <EntityType Name="Cargo">
+          <Key>
+            <PropertyRef Name="IDCargo" />
+          </Key>
+          <Property Type="Int32" Name="IDCargo" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="DescricaoCargo" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Type="DateTime" Name="DataInsert" />
+          <Property Type="DateTime" Name="DataUpdate" />
+          <NavigationProperty Name="Funcionarios" Relationship="Curso2013Turma03Model.FK_Funcionario_Cargo" FromRole="Cargo" ToRole="Funcionario" />
+        </EntityType>
+        <EntityType Name="Funcionario">
+          <Key>
+            <PropertyRef Name="IDFuncionario" />
+          </Key>
+          <Property Type="Int32" Name="IDFuncionario" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="Nome" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="Sobrenome" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Type="Int32" Name="IDCargo" Nullable="false" />
+          <Property Type="Int32" Name="IDLotacao" Nullable="false" />
+          <Property Type="String" Name="Endereco" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Type="Int32" Name="IDMunicipio" Nullable="false" />
+          <Property Type="String" Name="Telefone" Nullable="false" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Type="DateTime" Name="DataInsert" />
+          <Property Type="DateTime" Name="DataUpdate" />
+          <NavigationProperty Name="Cargo" Relationship="Curso2013Turma03Model.FK_Funcionario_Cargo" FromRole="Funcionario" ToRole="Cargo" />
+          <NavigationProperty Name="Lotacao" Relationship="Curso2013Turma03Model.FK_Funcionario_Lotacao" FromRole="Funcionario" ToRole="Lotacao" />
+          <NavigationProperty Name="Municipio" Relationship="Curso2013Turma03Model.FK_Funcionario_Municipio" FromRole="Funcionario" ToRole="Municipio" />
+        </EntityType>
+        <EntityType Name="Lotacao">
+          <Key>
+            <PropertyRef Name="IDLotacao" />
+          </Key>
+          <Property Type="Int32" Name="IDLotacao" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="DescricaoLotacao" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Type="DateTime" Name="DataInsert" />
+          <Property Type="DateTime" Name="DataUpdate" />
+          <NavigationProperty Name="Funcionarios" Relationship="Curso2013Turma03Model.FK_Funcionario_Lotacao" FromRole="Lotacao" ToRole="Funcionario" />
+        </EntityType>
+        <EntityType Name="Municipio">
+          <Key>
+            <PropertyRef Name="IDMunicipio" />
+          </Key>
+          <Property Type="Int32" Name="IDMunicipio" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="DescricaoMunicipio" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Type="Int32" Name="IDUF" Nullable="false" />
+          <Property Type="DateTime" Name="DataInsert" />
+          <Property Type="DateTime" Name="DataUpdate" />
+          <NavigationProperty Name="Funcionarios" Relationship="Curso2013Turma03Model.FK_Funcionario_Municipio" FromRole="Municipio" ToRole="Funcionario" />
+          <NavigationProperty Name="UF" Relationship="Curso2013Turma03Model.FK_Municipio_UF" FromRole="Municipio" ToRole="UF" />
+        </EntityType>
+        <EntityType Name="UF">
+          <Key>
+            <PropertyRef Name="IDUF" />
+          </Key>
+          <Property Type="Int32" Name="IDUF" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="DescricaoUF" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="Sigla" Nullable="false" MaxLength="2" FixedLength="true" Unicode="false" />
+          <Property Type="DateTime" Name="DataInsert" />
+          <Property Type="DateTime" Name="DataUpdate" />
+          <NavigationProperty Name="Municipios" Relationship="Curso2013Turma03Model.FK_Municipio_UF" FromRole="UF" ToRole="Municipio" />
+        </EntityType>
+        <Association Name="FK_Funcionario_Cargo">
+          <End Type="Curso2013Turma03Model.Cargo" Role="Cargo" Multiplicity="1" />
+          <End Type="Curso2013Turma03Model.Funcionario" Role="Funcionario" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Cargo">
+              <PropertyRef Name="IDCargo" />
+            </Principal>
+            <Dependent Role="Funcionario">
+              <PropertyRef Name="IDCargo" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Funcionario_Lotacao">
+          <End Type="Curso2013Turma03Model.Lotacao" Role="Lotacao" Multiplicity="1" />
+          <End Type="Curso2013Turma03Model.Funcionario" Role="Funcionario" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Lotacao">
+              <PropertyRef Name="IDLotacao" />
+            </Principal>
+            <Dependent Role="Funcionario">
+              <PropertyRef Name="IDLotacao" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Funcionario_Municipio">
+          <End Type="Curso2013Turma03Model.Municipio" Role="Municipio" Multiplicity="1" />
+          <End Type="Curso2013Turma03Model.Funcionario" Role="Funcionario" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Municipio">
+              <PropertyRef Name="IDMunicipio" />
+            </Principal>
+            <Dependent Role="Funcionario">
+              <PropertyRef Name="IDMunicipio" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Municipio_UF">
+          <End Type="Curso2013Turma03Model.UF" Role="UF" Multiplicity="1" />
+          <End Type="Curso2013Turma03Model.Municipio" Role="Municipio" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="UF">
+              <PropertyRef Name="IDUF" />
+            </Principal>
+            <Dependent Role="Municipio">
+              <PropertyRef Name="IDUF" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <ComplexType Name="PR_ListarFuncionarios_Result">
+          <Property Type="Int32" Name="IDFuncionario" Nullable="false" />
+          <Property Type="String" Name="Nome" Nullable="false" />
+          <Property Type="String" Name="Sobrenome" Nullable="false" />
+          <Property Type="String" Name="DescricaoCargo" Nullable="false" />
+          <Property Type="String" Name="DescricaoLotacao" Nullable="false" />
+          <Property Type="String" Name="Endereco" Nullable="false" />
+          <Property Type="String" Name="DescricaoMunicipio" Nullable="false" />
+          <Property Type="String" Name="Sigla" Nullable="false" MaxLength="2" />
+          <Property Type="String" Name="Telefone" Nullable="false" MaxLength="10" />
+        </ComplexType>
+        <ComplexType Name="PR_ListarFuncionariosPorCargo_Result">
+          <Property Type="Int32" Name="IDFuncionario" Nullable="false" />
+          <Property Type="String" Name="Nome" Nullable="false" />
+          <Property Type="String" Name="Sobrenome" Nullable="false" />
+          <Property Type="String" Name="DescricaoCargo" Nullable="false" />
+          <Property Type="String" Name="DescricaoLotacao" Nullable="false" />
+          <Property Type="String" Name="Endereco" Nullable="false" />
+          <Property Type="String" Name="DescricaoMunicipio" Nullable="false" />
+          <Property Type="String" Name="Sigla" Nullable="false" MaxLength="2" />
+          <Property Type="String" Name="Telefone" Nullable="false" MaxLength="10" />
+        </ComplexType>
+        <ComplexType Name="PR_ListarFuncionariosPorLotacao_Result">
+          <Property Type="Int32" Name="IDFuncionario" Nullable="false" />
+          <Property Type="String" Name="Nome" Nullable="false" />
+          <Property Type="String" Name="Sobrenome" Nullable="false" />
+          <Property Type="String" Name="DescricaoCargo" Nullable="false" />
+          <Property Type="String" Name="DescricaoLotacao" Nullable="false" />
+          <Property Type="String" Name="Endereco" Nullable="false" />
+          <Property Type="String" Name="DescricaoMunicipio" Nullable="false" />
+          <Property Type="String" Name="Sigla" Nullable="false" MaxLength="2" />
+          <Property Type="String" Name="Telefone" Nullable="false" MaxLength="10" />
+        </ComplexType>
+        <ComplexType Name="PR_ListarMunicipios_Result">
+          <Property Type="Int32" Name="IDMunicipio" Nullable="false" />
+          <Property Type="String" Name="DescricaoMunicipio" Nullable="false" />
+          <Property Type="String" Name="Sigla" Nullable="false" MaxLength="2" />
+        </ComplexType>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2008/09/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="Curso2013Turma03ModelStoreContainer" CdmEntityContainer="Curso2013Turma03Entities">
+          <EntitySetMapping Name="Clientes"><EntityTypeMapping TypeName="Curso2013Turma03Model.Cliente"><MappingFragment StoreEntitySet="Clientes">
+            <ScalarProperty Name="ID" ColumnName="ID" />
+            <ScalarProperty Name="Nome" ColumnName="Nome" />
+            <ScalarProperty Name="Sobrenome" ColumnName="Sobrenome" />
+            <ScalarProperty Name="Cargo" ColumnName="Cargo" />
+            <ScalarProperty Name="Lotacao" ColumnName="Lotacao" />
+            <ScalarProperty Name="Telefone" ColumnName="Telefone" />
+            <ScalarProperty Name="DataInsert" ColumnName="DataInsert" />
+            <ScalarProperty Name="DataUpdate" ColumnName="DataUpdate" />
+          </MappingFragment></EntityTypeMapping></EntitySetMapping>
+          <EntitySetMapping Name="Cargoes">
+            <EntityTypeMapping TypeName="Curso2013Turma03Model.Cargo">
+              <MappingFragment StoreEntitySet="Cargo">
+                <ScalarProperty Name="DataUpdate" ColumnName="DataUpdate" />
+                <ScalarProperty Name="DataInsert" ColumnName="DataInsert" />
+                <ScalarProperty Name="DescricaoCargo" ColumnName="DescricaoCargo" />
+                <ScalarProperty Name="IDCargo" ColumnName="IDCargo" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Funcionarios">
+            <EntityTypeMapping TypeName="Curso2013Turma03Model.Funcionario">
+              <MappingFragment StoreEntitySet="Funcionario">
+                <ScalarProperty Name="DataUpdate" ColumnName="DataUpdate" />
+                <ScalarProperty Name="DataInsert" ColumnName="DataInsert" />
+                <ScalarProperty Name="Telefone" ColumnName="Telefone" />
+                <ScalarProperty Name="IDMunicipio" ColumnName="IDMunicipio" />
+                <ScalarProperty Name="Endereco" ColumnName="Endereco" />
+                <ScalarProperty Name="IDLotacao" ColumnName="IDLotacao" />
+                <ScalarProperty Name="IDCargo" ColumnName="IDCargo" />
+                <ScalarProperty Name="Sobrenome" ColumnName="Sobrenome" />
+                <ScalarProperty Name="Nome" ColumnName="Nome" />
+                <ScalarProperty Name="IDFuncionario" ColumnName="IDFuncionario" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Lotacaos">
+            <EntityTypeMapping TypeName="Curso2013Turma03Model.Lotacao">
+              <MappingFragment StoreEntitySet="Lotacao">
+                <ScalarProperty Name="DataUpdate" ColumnName="DataUpdate" />
+                <ScalarProperty Name="DataInsert" ColumnName="DataInsert" />
+                <ScalarProperty Name="DescricaoLotacao" ColumnName="DescricaoLotacao" />
+                <ScalarProperty Name="IDLotacao" ColumnName="IDLotacao" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Municipios">
+            <EntityTypeMapping TypeName="Curso2013Turma03Model.Municipio">
+              <MappingFragment StoreEntitySet="Municipio">
+                <ScalarProperty Name="DataUpdate" ColumnName="DataUpdate" />
+                <ScalarProperty Name="DataInsert" ColumnName="DataInsert" />
+                <ScalarProperty Name="IDUF" ColumnName="IDUF" />
+                <ScalarProperty Name="DescricaoMunicipio" ColumnName="DescricaoMunicipio" />
+                <ScalarProperty Name="IDMunicipio" ColumnName="IDMunicipio" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="UFs">
+            <EntityTypeMapping TypeName="Curso2013Turma03Model.UF">
+              <MappingFragment StoreEntitySet="UF">
+                <ScalarProperty Name="DataUpdate" ColumnName="DataUpdate" />
+                <ScalarProperty Name="DataInsert" ColumnName="DataInsert" />
+                <ScalarProperty Name="Sigla" ColumnName="Sigla" />
+                <ScalarProperty Name="DescricaoUF" ColumnName="DescricaoUF" />
+                <ScalarProperty Name="IDUF" ColumnName="IDUF" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <FunctionImportMapping FunctionImportName="PR_ListarFuncionarios" FunctionName="Curso2013Turma03Model.Store.PR_ListarFuncionarios">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="Curso2013Turma03Model.PR_ListarFuncionarios_Result">
+                <ScalarProperty Name="IDFuncionario" ColumnName="IDFuncionario" />
+                <ScalarProperty Name="Nome" ColumnName="Nome" />
+                <ScalarProperty Name="Sobrenome" ColumnName="Sobrenome" />
+                <ScalarProperty Name="DescricaoCargo" ColumnName="DescricaoCargo" />
+                <ScalarProperty Name="DescricaoLotacao" ColumnName="DescricaoLotacao" />
+                <ScalarProperty Name="Endereco" ColumnName="Endereco" />
+                <ScalarProperty Name="DescricaoMunicipio" ColumnName="DescricaoMunicipio" />
+                <ScalarProperty Name="Sigla" ColumnName="Sigla" />
+                <ScalarProperty Name="Telefone" ColumnName="Telefone" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="PR_ListarFuncionariosPorCargo" FunctionName="Curso2013Turma03Model.Store.PR_ListarFuncionariosPorCargo">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="Curso2013Turma03Model.PR_ListarFuncionariosPorCargo_Result">
+                <ScalarProperty Name="IDFuncionario" ColumnName="IDFuncionario" />
+                <ScalarProperty Name="Nome" ColumnName="Nome" />
+                <ScalarProperty Name="Sobrenome" ColumnName="Sobrenome" />
+                <ScalarProperty Name="DescricaoCargo" ColumnName="DescricaoCargo" />
+                <ScalarProperty Name="DescricaoLotacao" ColumnName="DescricaoLotacao" />
+                <ScalarProperty Name="Endereco" ColumnName="Endereco" />
+                <ScalarProperty Name="DescricaoMunicipio" ColumnName="DescricaoMunicipio" />
+                <ScalarProperty Name="Sigla" ColumnName="Sigla" />
+                <ScalarProperty Name="Telefone" ColumnName="Telefone" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="PR_ListarFuncionariosPorLotacao" FunctionName="Curso2013Turma03Model.Store.PR_ListarFuncionariosPorLotacao">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="Curso2013Turma03Model.PR_ListarFuncionariosPorLotacao_Result">
+                <ScalarProperty Name="IDFuncionario" ColumnName="IDFuncionario" />
+                <ScalarProperty Name="Nome" ColumnName="Nome" />
+                <ScalarProperty Name="Sobrenome" ColumnName="Sobrenome" />
+                <ScalarProperty Name="DescricaoCargo" ColumnName="DescricaoCargo" />
+                <ScalarProperty Name="DescricaoLotacao" ColumnName="DescricaoLotacao" />
+                <ScalarProperty Name="Endereco" ColumnName="Endereco" />
+                <ScalarProperty Name="DescricaoMunicipio" ColumnName="DescricaoMunicipio" />
+                <ScalarProperty Name="Sigla" ColumnName="Sigla" />
+                <ScalarProperty Name="Telefone" ColumnName="Telefone" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="PR_ListarMunicipios" FunctionName="Curso2013Turma03Model.Store.PR_ListarMunicipios">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="Curso2013Turma03Model.PR_ListarMunicipios_Result">
+                <ScalarProperty Name="IDMunicipio" ColumnName="IDMunicipio" />
+                <ScalarProperty Name="DescricaoMunicipio" ColumnName="DescricaoMunicipio" />
+                <ScalarProperty Name="Sigla" ColumnName="Sigla" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2008/10/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="True" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="True" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams>
+      <Diagram Name="Curso2013Turma03Model">
+        <EntityTypeShape EntityType="Curso2013Turma03Model.Cliente" Width="1.5" PointX="0.75" PointY="0.75" Height="2.5571907552083335" IsExpanded="true" />
+        <EntityTypeShape EntityType="Curso2013Turma03Model.Cargo" Width="1.5" PointX="10.625" PointY="0.5" Height="1.9802864583333335" />
+        <EntityTypeShape EntityType="Curso2013Turma03Model.Funcionario" Width="1.5" PointX="7.875" PointY="0.5" Height="3.5186979166666656" />
+        <EntityTypeShape EntityType="Curso2013Turma03Model.Lotacao" Width="1.5" PointX="10.625" PointY="2.75" Height="1.9802864583333353" />
+        <EntityTypeShape EntityType="Curso2013Turma03Model.Municipio" Width="1.5" PointX="5.625" PointY="1.125" Height="2.3648893229166656" />
+        <EntityTypeShape EntityType="Curso2013Turma03Model.UF" Width="1.5" PointX="3.375" PointY="1.125" Height="2.1725878906249996" />
+        <AssociationConnector Association="Curso2013Turma03Model.FK_Funcionario_Cargo" >
+          <ConnectorPoint PointX="10.625" PointY="1.4901432291666668" />
+          <ConnectorPoint PointX="9.375" PointY="1.4901432291666668" />
+        </AssociationConnector>
+        <AssociationConnector Association="Curso2013Turma03Model.FK_Funcionario_Lotacao" >
+          <ConnectorPoint PointX="10.625" PointY="3.3843489583333328" />
+          <ConnectorPoint PointX="9.375" PointY="3.3843489583333328" />
+        </AssociationConnector>
+        <AssociationConnector Association="Curso2013Turma03Model.FK_Funcionario_Municipio" >
+          <ConnectorPoint PointX="7.125" PointY="2.3074446614583328" />
+          <ConnectorPoint PointX="7.875" PointY="2.3074446614583328" />
+        </AssociationConnector>
+        <AssociationConnector Association="Curso2013Turma03Model.FK_Municipio_UF" >
+          <ConnectorPoint PointX="4.875" PointY="2.2112939453125" />
+          <ConnectorPoint PointX="5.625" PointY="2.2112939453125" />
+        </AssociationConnector>
+      </Diagram>
+    </Diagrams>
+  </Designer>
+</edmx:Edmx>

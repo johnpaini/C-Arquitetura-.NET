@@ -1,0 +1,38 @@
+﻿@model Treinamento2013Curso03.ModelData.Logic.Curso2013Turma03.Model.Municipio
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<fieldset>
+    <legend>Municipio</legend>
+
+    <div class="display-label">DescricaoMunicipio</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.DescricaoMunicipio)
+    </div>
+
+    <div class="display-label">IDUF</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.IDUF)
+    </div>
+
+    <div class="display-label">DataInsert</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.DataInsert)
+    </div>
+
+    <div class="display-label">DataUpdate</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.DataUpdate)
+    </div>
+</fieldset>
+@using (Html.BeginForm()) {
+    <p>
+        <input type="submit" value="Delete" /> |
+        @Html.ActionLink("Back to List", "Index")
+    </p>
+}

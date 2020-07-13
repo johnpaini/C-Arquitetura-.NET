@@ -1,0 +1,60 @@
+﻿@model Treinamento2013Curso03.ModelData.Logic.Curso2013Turma03.Model.Funcionario
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<fieldset>
+    <legend>Funcionario</legend>
+
+    <div class="display-label">Nome</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Nome)
+    </div>
+
+    <div class="display-label">Sobrenome</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Sobrenome)
+    </div>
+
+    <div class="display-label">IDCargo</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.IDCargo)
+    </div>
+
+    <div class="display-label">IDLotacao</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.IDLotacao)
+    </div>
+
+    <div class="display-label">Endereco</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Endereco)
+    </div>
+
+    <div class="display-label">IDMunicipio</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.IDMunicipio)
+    </div>
+
+    <div class="display-label">Telefone</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Telefone)
+    </div>
+
+    <div class="display-label">DataInsert</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.DataInsert)
+    </div>
+
+    <div class="display-label">DataUpdate</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.DataUpdate)
+    </div>
+</fieldset>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id=Model.IDFuncionario }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
